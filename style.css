@@ -1,0 +1,95 @@
+/* Design tokens */
+:root{
+  --bg:#0b0f17;
+  --panel:#121826;
+  --text:#e6e9ef;
+  --muted:#99a2b2;
+  --primary:#6c8cff;
+  --primary-600:#5a76e6;
+  --accent:#22d1aa;
+  --chip:#1a2235;
+  --border:rgba(255,255,255,0.08);
+  --shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Reset and base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  color:var(--text);
+  background:radial-gradient(1200px 600px at 10% -10%, rgba(108,140,255,0.2), transparent),
+            radial-gradient(1000px 500px at 110% 10%, rgba(34,209,170,0.18), transparent),
+            var(--bg);
+  line-height:1.6;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(11,15,23,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));font-weight:800}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px}
+.nav-list{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.nav-list a{color:var(--muted)}
+.nav-list a:hover{color:var(--text)}
+
+@media (max-width: 720px){
+  .nav-toggle{display:inline-block}
+  .nav-list{position:absolute;top:64px;right:20px;flex-direction:column;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:12px;display:none}
+  .nav-list.open{display:flex}
+}
+
+/* Hero */
+.hero{position:relative;display:grid;place-items:center;padding:96px 20px 64px}
+.hero-content{max-width:800px;text-align:center}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.title{font-size:clamp(36px,7vw,64px);line-height:1.1;margin:0 0 12px}
+.subtitle{color:var(--muted);margin:0 0 24px}
+.cta-group{display:flex;gap:12px;justify-content:center}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text);box-shadow:var(--shadow);transition:transform .15s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(135deg,var(--primary),var(--primary-600));border-color:transparent}
+.btn.ghost{background:transparent}
+.btn.small{padding:8px 12px}
+
+.hero-accent{position:absolute;inset:auto 0 -80px 0;height:160px;background:radial-gradient(60% 100% at 50% 0, rgba(108,140,255,0.25), transparent);filter:blur(30px);pointer-events:none}
+
+/* Sections */
+.section{padding:72px 0}
+.section h2{font-size:28px;margin:0 0 20px}
+
+.about p{margin:0 0 16px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:12px 0 0;padding:0}
+.chips li{background:var(--chip);border:1px solid var(--border);padding:8px 12px;border-radius:999px;color:var(--text)}
+
+/* Projects */
+.projects .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:180px}
+.card-body{padding:16px 16px 0}
+.card h3{margin:0 0 8px}
+.card p{margin:0 0 12px;color:var(--muted)}
+.card-footer{margin-top:auto;padding:12px 16px;display:flex;gap:10px;border-top:1px solid var(--border);background:rgba(0,0,0,0.1)}
+
+@media (max-width: 900px){
+  .projects .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width: 600px){
+  .projects .grid{grid-template-columns:1fr}
+}
+
+/* Contact */
+.contact p{color:var(--muted)}
+.contact-list{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:12px 0 0;padding:0}
+.contact-list a{color:var(--text)}
+.contact-list a:hover{color:var(--primary)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);background:rgba(0,0,0,0.2)}
+
