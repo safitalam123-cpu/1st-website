@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Shafit Alam, student at MGC—projects, skills, and contact.">
+    <title>Shafit Alam • Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header" id="top">
+        <nav class="nav">
+            <a class="logo" href="#top">SA</a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-label="Hero">
+            <div class="hero-content">
+                <p class="eyebrow">Hello, I'm</p>
+                <h1 class="title">Shafit Alam</h1>
+                <p class="subtitle">Student at MGC • Aspiring Web Developer</p>
+                <div class="cta-group">
+                    <a class="btn primary" href="#projects">View Projects</a>
+                    <a class="btn ghost" href="#contact">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-accent" aria-hidden="true"></div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2>About</h2>
+                <p>
+                    I'm <strong>Shafit Alam</strong>, a student at <strong>MGC</strong>. I enjoy building clean, user‑friendly web experiences
+                    and exploring modern front‑end technologies. I'm focused on learning by doing—turning ideas into responsive, accessible interfaces.
+                </p>
+                <ul class="chips">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-body">
+                            <h3>Modern Portfolio</h3>
+                            <p>A clean, responsive portfolio layout built with semantic HTML and CSS.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn small" href="#" aria-disabled="true">Live</a>
+                            <a class="btn small ghost" href="#" aria-disabled="true">Code</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <h3>Landing Page Concept</h3>
+                            <p>Hero-first design with bold typography and fluid grid layout.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn small" href="#" aria-disabled="true">Live</a>
+                            <a class="btn small ghost" href="#" aria-disabled="true">Code</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <h3>UI Components</h3>
+                            <p>Reusable buttons, cards, and navigation built with accessibility in mind.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn small" href="#" aria-disabled="true">Live</a>
+                            <a class="btn small ghost" href="#" aria-disabled="true">Code</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>If you'd like to collaborate or say hello, reach out:</p>
+                <ul class="contact-list">
+                    <li><a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Shafit Alam • MGC</p>
+        </div>
+    </footer>
+
+    <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        navList.classList.toggle('open');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
